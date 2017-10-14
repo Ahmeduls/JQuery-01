@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>JQuery</title>
+    <!--    Font-->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <style>
+        .button-group .btn {
+            margin: 20px 5px;
+        }
+        
+        .btn {
+            margin: 20px 5px;
+        }
+        
+        ol,
+        ul {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding-left: 17px;
+        }
+        
+        .odd {
+            color: red;
+            font-weight: 700;
+        }
+        
+        .even {
+            color: green;
+            font-weight: 700;
+        }
+        
+        .equel {
+            color: maroon;
+            font-weight: 700;
+        }
+        
+        a {
+            padding: 0 6px;
+            font-weight: 700;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <button id="btn_id" class="btn btn-danger">ID Selector</button>
+        <button class="btn_class btn btn-danger">Class Selector</button>
+        <br>
+        <div class="button-group">
+            <button id="fade_to" class="btn btn-primary">Fade To</button>
+            <button class="fade_in btn btn-danger">Fade In</button>
+            <button class="fade_out btn btn-success">Fade Out</button>
+            <button class="fade_toggle btn btn-info">Fade Toggle</button>
+        </div>
+        <div class="data">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi consequatur mollitia, quos neque quibusdam ut laudantium reprehenderit nesciunt ratione ex fugit, sit aut voluptas error alias! Quasi aperiam voluptate fugit, pariatur minima. Reprehenderit commodi sed rem molestias placeat quibusdam assumenda, eveniet quidem fuga maiores hic optio! Veritatis voluptate ea dicta quas blanditiis voluptas eum temporibus, quidem magni asperiores ipsam culpa corporis quam totam, cupiditate fugit iusto, quod est similique! Est sequi a.
+        </div>
+
+        <ul>
+            <li>Web Design</li>
+            <li>Web Development</li>
+            <li>Wordpress</li>
+            <li>Graphic Design</li>
+            <li>SEO</li>
+            <li>JavaScript</li>
+        </ul>
+
+        <h1>This is Header One</h1>
+        <h2>This is Header Two</h2>
+        <h3>This is Header Three</h3>
+        <h4>This is Header Four</h4>
+        <h5>This is Header Five</h5>
+
+        <button class="fade_out_header btn btn-success">Fade Out Header</button>
+        <button class="fade_in_header btn btn-success">Fade In Header</button>
+        <button class="fade_not_header btn btn-success">Fade Not Header</button>
+        <br>
+        <br>
+        <a href="" title="Click One">Click One</a>
+        <a href="" title="Click Two">Click Two</a>
+        <a href="" title="Click Three">Click Three</a>
+        <a href="">Click Four</a>
+        <a href="">Click Five</a>
+        <a href="">Click Six</a>
+        <br>
+        <br>
+        <button class="fade_click_one btn btn-success">Fade Click One</button>
+        <br>
+        <br>
+        <input type="text" name="FirestName" class="form-control" style="width:400px" placeholder="Username">
+        <br>
+        <input type="password" name="Password" class="form-control" style="width: 400px" placeholder="Password">
+        <br>
+        <br>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $("#btn_id").click(function() {
+                alert("This is an ID Selector");
+            });
+            $(".btn_class").click(function() {
+                $(".btn_class").hide(4000);
+            });
+
+            $(".fade_out").click(function() {
+                $(".data").fadeOut(2000);
+            });
+            $(".fade_in").click(function() {
+                $(".data").fadeIn(2000);
+                $(".data").fadeTo(2000, 1);
+            });
+            $("#fade_to").click(function() {
+                $(".data").fadeTo(2000, 0.5);
+            });
+            $(".fade_toggle").click(function() {
+                $(".data").fadeToggle(2000);
+            });
+            $("ul li:odd").addClass("odd");
+            $("ul li:even").addClass("even");
+            $("ul li:eq(2)").addClass("equel");
+            $(".fade_out_header").click(function() {
+                $(":header").fadeOut(1500);
+            });
+            $(".fade_in_header").click(function() {
+                $(":header").fadeIn(1500);
+            });
+            $(".fade_not_header").click(function() {
+                $(":header:not(:header:eq(2))").fadeOut(1500);
+            });
+            $(".fade_click_one").click(function() {
+                $("a[title='Click One']").fadeOut(2000);
+            });
+            $(":input:password").css('background-color', 'pink');
+            $(":input:password").css('color', 'red');
+            $(":input:text").css('background-color', 'yellow');
+        });
+    </script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
